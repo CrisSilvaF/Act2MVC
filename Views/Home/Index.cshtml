@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Act2MVC.Models.Sale>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if(User.Identity.IsAuthenticated){
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr class="bg-dark-blue text-light">
+                <th>
+                    Number of sales
+                </th>
+                <th>
+                    Amount of sales
+                </th>
+                <th>
+                    Release Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                @if((item.Id%2) == 0){
+                    <tr class="bg-secondary text-light">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numSales)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.amtSales)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseDate)
+                        </td>
+                    </tr>
+                }else{
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numSales)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.amtSales)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseDate)
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <br>
+    <div class="text-center">
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+}else{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <br>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+}

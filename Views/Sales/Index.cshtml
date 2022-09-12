@@ -1,0 +1,80 @@
+@model IEnumerable<Act2MVC.Models.Sale>
+
+@{
+    ViewData["Title"] = "Sales";
+}
+
+<h1>Sales</h1>
+@if (User.Identity.IsAuthenticated){  
+    <p>
+        <a class="ui-btn text-dark" asp-action="Create"><i class="bi bi-file-earmark-plus"></i> Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr class="bg-dark-blue text-light">
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    Number of sales
+                </th>
+                <th>
+                    Amount of sales
+                </th>
+                <th>
+                    Release Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+                @if((item.Id%2) == 0){
+                    <tr class="bg-secondary text-light">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numSales)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.amtSales)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseDate)
+                        </td>
+                        <td>
+                            <a class="text-light ui-btn" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>&nbsp;|&nbsp;
+                            <a class="text-light ui-btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square"></i> Details</a>&nbsp;|&nbsp;
+                            <a class="text-light ui-btn" asp-action="Delete" asp-route-id="@item.Id"> <i class="bi bi-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                }else{
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numSales)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.amtSales)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReleaseDate)
+                        </td>
+                        <td>
+                            <a class="text-dark ui-btn" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i> Edit</a>&nbsp;|&nbsp;
+                            <a class="text-dark ui-btn" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square"></i> Details</a>&nbsp;|&nbsp;
+                            <a class="text-dark ui-btn" asp-action="Delete" asp-route-id="@item.Id"> <i class="bi bi-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}else{
+    <div class="text-center">
+        <p>You must <a asp-area="Identity" asp-page="/Account/Login">log in </a>to view the content.</p>
+    </div>
+}

@@ -1,0 +1,31 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*===== Custom Styles =====*/
+.bg-dark-blue{
+  background-color: rgb(15, 31, 63);
+}
+
+.ui-btn{
+  text-decoration: none;
+}
+
+.ui-btn:hover{
+  text-decoration: underline;
+}
