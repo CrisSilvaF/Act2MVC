@@ -290,3 +290,12 @@
 /home/crissilvafr/Act2MVC/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
 /home/crissilvafr/Act2MVC/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
 /home/crissilvafr/Act2MVC/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/home/crissilvafr/app/appsettings.Development.json
+/home/crissilvafr/app/appsettings.json
+/home/crissilvafr/app/Act2MVC.staticwebassets.runtime.json
+/home/crissilvafr/app/app.db
+/home/crissilvafr/app/Act2MVC
+/home/crissilvafr/app/Act2MVC.deps.json
+/home/crissilvafr/app/Act2MVC.runtimeconfig.json
+/home/crissilvafr/app/Act2MVC.dll
+/home/crissilvafr/app/Act2MVC.pdb
